@@ -54,7 +54,6 @@ namespace Can
 
 	void Renderer2D::Init()
 	{
-		CAN_PROFILE_FUNCTION();
 
 		s_Data.QuadVertexArray = VertexArray::Create();
 
@@ -113,12 +112,10 @@ namespace Can
 	}
 	void Renderer2D::Shutdown()
 	{
-		CAN_PROFILE_FUNCTION();
 	}
 
 	void Renderer2D::BeginScene(const Camera::OrthographicCamera& camera)
 	{
-		CAN_PROFILE_FUNCTION();
 
 		s_Data.TextureShader->Bind();
 		s_Data.TextureShader->SetMat4("u_ViewProjection", camera.GetViewProjectionMatrix());
@@ -129,7 +126,6 @@ namespace Can
 	}
 	void Renderer2D::EndScene()
 	{
-		CAN_PROFILE_FUNCTION();
 
 		uint32_t dataSize = (uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase;
 		s_Data.QuadVertexBuffer->SetData((float*)s_Data.QuadVertexBufferBase, dataSize);
@@ -139,7 +135,6 @@ namespace Can
 
 	void Renderer2D::Flush()
 	{
-		CAN_PROFILE_FUNCTION();
 		s_Data.QuadVertexArray->Bind();
 
 		for (size_t i = 0; i < s_Data.TextureSlotIndex; i++)
@@ -149,7 +144,6 @@ namespace Can
 
 	void Renderer2D::DrawQuad(const DrawQuadParameters& parameters)
 	{
-		CAN_PROFILE_FUNCTION();
 
 		glm::mat4 transform =
 			glm::translate(glm::mat4(1.0f), parameters.Position)
@@ -160,7 +154,6 @@ namespace Can
 	}
 	void Renderer2D::DrawQuad(const glm::mat4& transform, const DrawQuadParameters& parameters)
 	{
-		CAN_PROFILE_FUNCTION();
 		float textureIndex = 0.0f;
 		if (parameters.texture != nullptr)
 		{
@@ -212,7 +205,6 @@ namespace Can
 
 	void Renderer2D::DrawRoundedQuad(const DrawQuadParameters& parameters)
 	{
-		CAN_PROFILE_FUNCTION();
 
 		glm::mat4 transform =
 			glm::translate(glm::mat4(1.0f), parameters.Position)
@@ -223,7 +215,6 @@ namespace Can
 	}
 	void Renderer2D::DrawRoundedQuad(const glm::mat4& transform, const DrawQuadParameters& parameters)
 	{
-		CAN_PROFILE_FUNCTION();
 		// radius / size;
 		float textureIndex = 0.0f;
 		if (parameters.texture != nullptr)

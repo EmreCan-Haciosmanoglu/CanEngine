@@ -26,6 +26,11 @@
 		BDF3F656287A0A2B006D5B9F /* CanEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CanEngine; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3F659287A0A2B006D5B9F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BDF3F660287A0F03006D5B9F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+		BDF3F661287A13ED006D5B9F /* vendors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vendors; sourceTree = "<group>"; };
+		BDF3F663287ABEC5006D5B9F /* spdlog */ = {isa = PBXFileReference; lastKnownFileType = folder; name = spdlog; path = CanEngine/vendors/spdlog; sourceTree = "<group>"; };
+		BDF3F665287ABF24006D5B9F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = CanEngine/vendors/spdlog/src; sourceTree = "<group>"; };
+		BDF3F667287AD6EE006D5B9F /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = build; path = CanEngine/vendors/spdlog/build; sourceTree = "<group>"; };
+		BDF3F669287AD765006D5B9F /* libspdlog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libspdlog.a; path = CanEngine/vendors/spdlog/build/libspdlog.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			children = (
 				BDF3F658287A0A2B006D5B9F /* CanEngine */,
 				BDF3F657287A0A2B006D5B9F /* Products */,
+				BDF3F662287ABEC5006D5B9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +64,22 @@
 		BDF3F658287A0A2B006D5B9F /* CanEngine */ = {
 			isa = PBXGroup;
 			children = (
+				BDF3F661287A13ED006D5B9F /* vendors */,
 				BDF3F660287A0F03006D5B9F /* src */,
 				BDF3F659287A0A2B006D5B9F /* main.cpp */,
 			);
 			path = CanEngine;
+			sourceTree = "<group>";
+		};
+		BDF3F662287ABEC5006D5B9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDF3F669287AD765006D5B9F /* libspdlog.a */,
+				BDF3F667287AD6EE006D5B9F /* build */,
+				BDF3F665287ABF24006D5B9F /* src */,
+				BDF3F663287ABEC5006D5B9F /* spdlog */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +196,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/CanEngine/vendors/spdlog/include";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/CanEngine/vendors/spdlog/build";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -230,6 +250,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/CanEngine/vendors/spdlog/include";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/CanEngine/vendors/spdlog/build";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -240,9 +262,16 @@
 		BDF3F65E287A0A2B006D5B9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9SZ6ZLYFC3;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/CanEngine/vendors/glm",
+					"$(PROJECT_DIR)/CanEngine/src",
+					"$(PROJECT_DIR)/CanEngine/vendors/entt/src",
+				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,9 +279,16 @@
 		BDF3F65F287A0A2B006D5B9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9SZ6ZLYFC3;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/CanEngine/vendors/glm",
+					"$(PROJECT_DIR)/CanEngine/src",
+					"$(PROJECT_DIR)/CanEngine/vendors/entt/src",
+				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

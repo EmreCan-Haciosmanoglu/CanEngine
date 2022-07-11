@@ -7,10 +7,10 @@ namespace Can
 	{
 		entt::registry& Registry;
 		entt::entity Parent = entt::null;
-		glm::vec3& Position = glm::vec3(0.0f);
-		glm::vec2& Size = glm::vec2(1.0f);
-		glm::vec4& BaseColor = glm::vec4(1.0f);
-		glm::vec4& BarColor = glm::vec4(1.0f);
+		v3 Position = v3(0.0f);
+		v2 Size = v2(1.0f);
+		v4 BaseColor = v4(1.0f);
+		v4 BarColor = v4(1.0f);
 		bool vertical = false;
 		bool fixedSize = true;
 		float sizeRatio = 0.8f;
@@ -22,8 +22,8 @@ namespace Can
 		float baseBorderRadius = 0.0f;
 		bool baseBorder = false;
 		bool barBorder = false;
-		glm::vec4& baseBorderColor = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
-		glm::vec4& barBorderColor = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
+		v4 baseBorderColor = v4(0.0f, 0.0f, 0.0f, 1.0f);
+		v4 barBorderColor = v4(0.0f, 0.0f, 0.0f, 1.0f);
 	};
 	class ScrollBar
 	{

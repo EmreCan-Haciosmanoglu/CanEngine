@@ -8,11 +8,9 @@ namespace Can {
 
 	Scope<GraphicsContext> GraphicsContext::Create(void* window)
 	{
-		CAN_PROFILE_FUNCTION();
-
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::API::None:    CAN_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::None:    assert(false); return nullptr;
 		case RendererAPI::API::OpenGL:  return CreateScope<OpenGLContext>(static_cast<GLFWwindow*>(window));
 		}
 

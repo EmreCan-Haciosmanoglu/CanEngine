@@ -9,11 +9,9 @@ namespace Can
 
 	Scope<RendererAPI> RendererAPI::Create()
 	{
-		CAN_PROFILE_FUNCTION();
-
 		switch (s_API)
 		{
-		case RendererAPI::API::None:    CAN_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::None:    assert(false); return nullptr;
 		case RendererAPI::API::OpenGL:  return CreateScope<OpenGLRendererAPI>();
 		}
 

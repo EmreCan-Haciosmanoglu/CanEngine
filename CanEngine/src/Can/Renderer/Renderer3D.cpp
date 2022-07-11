@@ -12,16 +12,13 @@ namespace Can
 
 	void Renderer3D::Init()
 	{
-		CAN_PROFILE_FUNCTION();
 	}
 	void Renderer3D::Shutdown()
 	{
-		CAN_PROFILE_FUNCTION();
 	}
 
 	void Renderer3D::BeginScene(const Perspective_Camera& camera)
 	{
-		CAN_PROFILE_FUNCTION();
 
 		for (Object* o : s_Objects)
 		{
@@ -34,20 +31,17 @@ namespace Can
 	}
 	void Renderer3D::EndScene()
 	{
-		CAN_PROFILE_FUNCTION();
 
 	}
 
 	void Renderer3D::AddObject(Object* obj)
 	{
-		CAN_PROFILE_FUNCTION();
 
 		s_Objects.push_back(obj);
 	}
 
 	void Renderer3D::DeleteObject(Object* obj)
 	{
-		CAN_PROFILE_FUNCTION();
 
 		auto e = std::find(s_Objects.begin(), s_Objects.end(), obj);
 
@@ -59,7 +53,6 @@ namespace Can
 
 	void Renderer3D::DrawObjects(const glm::mat4& lightspace, unsigned int shadowMapTexture, const Perspective_Camera& camera, const glm::vec3& lightPos)
 	{
-		CAN_PROFILE_FUNCTION();
 
 
 		for (Object* obj : s_Objects)

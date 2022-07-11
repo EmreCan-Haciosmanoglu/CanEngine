@@ -1,0 +1,6 @@
+[submodule "CanEngine/vendors/glm"]
+	path = CanEngine/vendors/glm
+	url = https://github.com/EmreCan-Haciosmanoglu/glm
+[submodule "CanEngine/vendors/entt"]
+	path = CanEngine/vendors/entt
+	url = https://github.com/EmreCan-Haciosmanoglu/entt
