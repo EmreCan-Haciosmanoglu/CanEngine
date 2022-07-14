@@ -4,3 +4,9 @@
 [submodule "CanEngine/vendors/entt"]
 	path = CanEngine/vendors/entt
 	url = https://github.com/EmreCan-Haciosmanoglu/entt
+[submodule "CanEngine/vendors/glfw"]
+	path = CanEngine/vendors/glfw
+	url = https://github.com/EmreCan-Haciosmanoglu/glfw
+[submodule "ImGui"]
+	path = ImGui
+	url = https://github.com/EmreCan-Haciosmanoglu/imgui
