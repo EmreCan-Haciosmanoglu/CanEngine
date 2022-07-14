@@ -1,6 +1,7 @@
 #include "canpch.h"
 #include "ShadowMapMasterRenderer.h"
-#include <glad/glad.h>
+#include "Can/Renderer/RenderCommand.h"
+//#include <glad/glad.h>
 
 namespace Can
 {
@@ -33,8 +34,8 @@ namespace Can
 		UpdateLightView(lightDirection);
 
 		frameBuffer->Bind();
-		glEnable(GL_DEPTH_TEST);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        RenderCommand::enable_depth_testing(true);
+        RenderCommand::Clear();
 
 		shader->Bind();
 		projectionView = projection * lightView;

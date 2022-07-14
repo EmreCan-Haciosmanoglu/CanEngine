@@ -5,8 +5,10 @@
 
 #include "Can/Immediate_Renderer/Immediate_Renderer.h"
 
-#include "Platform/OpenGl/OpenGLShader.h"
 
+#ifdef CAN_PLATFORM_OPENGL
+#include "Platform/OpenGl/OpenGLShader.h"
+#endif
 
 namespace Can
 {

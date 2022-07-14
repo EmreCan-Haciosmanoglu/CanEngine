@@ -26,6 +26,7 @@
 
 #include "Can/Camera/Camera.h"
 #include "Can/Camera/Orthographic_Camera_Controller.h"
+#include "Can/Camera/Perspective_Camera_Controller.h"
 
 #include "Can/Scene/Panel.h"
 #include "Can/Scene/Scene.h"

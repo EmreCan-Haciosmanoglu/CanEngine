@@ -2,7 +2,7 @@
 #include "ShadowFrameBuffer.h"
 #include "Can/Application.h"
 #include "Can/Renderer/RenderCommand.h"
-#include <glad/glad.h>
+//#include <glad/glad.h>
 namespace Can
 {
 	ShadowFrameBuffer::ShadowFrameBuffer(int width, int height)
@@ -14,12 +14,13 @@ namespace Can
 
 	ShadowFrameBuffer::~ShadowFrameBuffer()
 	{
-		glDeleteFramebuffers(1, &fbo);
-		glDeleteTextures(1, &shadowMap);
+		//glDeleteFramebuffers(1, &fbo);
+		//glDeleteTextures(1, &shadowMap);
 	}
 
 	void ShadowFrameBuffer::Init()
 	{
+        /*
 		// configure depth map FBO
 		glGenFramebuffers(1, &fbo);
 
@@ -40,16 +41,17 @@ namespace Can
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+         */
 
 	}
 	void ShadowFrameBuffer::Bind()
 	{
 		RenderCommand::SetViewport(0, 0, width, height);
-		glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+		//glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 	}
 	void ShadowFrameBuffer::Unbind()
 	{
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		//glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		Window& window = Application::Get().GetWindow();
 		RenderCommand::SetViewport(0, 0, window.GetWidth(), window.GetHeight());
 	}

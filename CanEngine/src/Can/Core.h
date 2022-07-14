@@ -1,29 +1,31 @@
-#pragma once
-
+#ifndef CAN_CORE
+#define CAN_CORE
 #include <memory>
+#include <glm/glm.hpp>
 
 // Platform detection using predefined macros
 #ifdef _WIN32
 	/* Windows x64/x86 */
-#ifdef _WIN64
-	/* Windows x64  */
-	#define CAN_PLATFORM_WINDOWS
-#else
-	#error "x86 Builds are not supported!"
-#endif
+    #ifdef _WIN64
+        /* Windows x64  */
+        #define CAN_PLATFORM_WINDOWS
+    #else
+        #error "x86 Builds are not supported!"
+    #endif
 #elif defined(__APPLE__) || defined(__MACH__)
 	#include <TargetConditionals.h>
-#if TARGET_IPHONE_SIMULATOR == 1
-	#error "IOS simulator is not supported!"
-#elif TARGET_OS_IPHONE == 1
-	#define CAN_PLATFORM_IOS
-#error "IOS is not supported!"
-#elif TARGET_OS_MAC == 1
-	#define CAN_PLATFORM_MACOS
-//	#error "MacOS is not supported!"
-#else
-	#error "Unknown Apple platform!"
-#endif
+    #if TARGET_IPHONE_SIMULATOR == 1
+        #error "IOS simulator is not supported!"
+    #elif TARGET_OS_IPHONE == 1
+        #define CAN_PLATFORM_IOS
+        #error "IOS is not supported!"
+    #elif TARGET_OS_MAC == 1
+        #define CAN_PLATFORM_MACOS
+
+//        #error "MacOS is not supported!"
+    #else
+        #error "Unknown Apple platform!"
+    #endif
 #elif defined(__ANDROID__)
 	#define CAN_PLATFORM_ANDROID
 	#error "Android is not supported!"
@@ -41,7 +43,6 @@
 
 namespace Can
 {
-#include <glm/glm.hpp>
 	typedef void (*OnclickCallbackFn)();
 
 	template<typename T>
@@ -94,3 +95,4 @@ namespace Can
 		s32 z = 0;
 	};
 }
+#endif

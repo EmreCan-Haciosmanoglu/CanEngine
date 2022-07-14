@@ -12,7 +12,7 @@ namespace Can
 		case RendererAPI::API::None: assert(false); return nullptr;
 		case RendererAPI::API::OpenGL: return CreateRef< OpenGLVertexBuffer>(vertices, size, isDynamic);
 		}
-		CAN_CORE_ASSERT(false, "Unknown RendererAPI!!!");
+        assert(false);
 		return nullptr;
 	}
 	Ref<VertexBuffer> VertexBuffer::Create(uint32_t size)
@@ -22,7 +22,7 @@ namespace Can
 		case RendererAPI::API::None: assert(false); return nullptr;
 		case RendererAPI::API::OpenGL: return CreateRef<OpenGLVertexBuffer>(size);
 		}
-		CAN_CORE_ASSERT(false, "Unknown RendererAPI!!!");
+        assert(false);
 		return nullptr;
 	}
 	Ref<IndexBuffer> IndexBuffer::Create(uint32_t* indices, uint32_t count)
@@ -32,7 +32,7 @@ namespace Can
 		case RendererAPI::API::None: assert(false); return nullptr;
 		case RendererAPI::API::OpenGL: return CreateRef<OpenGLIndexBuffer>(indices, count);
 		}
-		CAN_CORE_ASSERT(false, "Unknown RendererAPI!!!");
+        assert(false);
 		return nullptr;
 	}
 }

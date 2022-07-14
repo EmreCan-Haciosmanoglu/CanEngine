@@ -25,8 +25,8 @@ namespace Can
 	{
 		bool exist = false;
 		u64 index = key % N;
-		Linked_List_Item<Value, N>* prev_item = nullptr;
-		Linked_List_Item<Value, N>* item = hash_table.table[index];
+		Linked_List_Item<Value>* prev_item = nullptr;
+		Linked_List_Item<Value>* item = hash_table.table[index];
 		while (item)
 		{
 			if (item->key == key)
@@ -41,7 +41,7 @@ namespace Can
 		}
 		if (!exist)
 		{
-			Linked_List_Item* new_item = new Linked_List_Item<Value, N>();
+			Linked_List_Item<Value>* new_item = new Linked_List_Item<Value>();
 			new_item->key = key;
 			new_item->item = value;
 			if (prev_item)
@@ -55,8 +55,8 @@ namespace Can
 	Value* get_or_insert(Hash_Table<Value, N>& hash_table, u64 key, Value* value)
 	{
 		u64 index = key % N;
-		Linked_List_Item<Value, N>* prev_item = nullptr;
-		Linked_List_Item<Value, N>* item = hash_table.table[index];
+		Linked_List_Item<Value>* prev_item = nullptr;
+		Linked_List_Item<Value>* item = hash_table.table[index];
 		while (item)
 		{
 			if (item->key == key)
@@ -65,7 +65,7 @@ namespace Can
 			prev_item = item;
 			item = item->next_item;
 		}
-		Linked_List_Item* new_item = new Linked_List_Item<Value, N>();
+		Linked_List_Item<Value>* new_item = new Linked_List_Item<Value>();
 		new_item->key = key;
 		new_item->item = value;
 		if (prev_item)

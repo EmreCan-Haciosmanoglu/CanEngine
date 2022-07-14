@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CAN_PCH
+#define CAN_PCH
 
 #include <iostream>
 #include <memory>
@@ -29,4 +30,5 @@
 
 #ifdef CAN_PLATFORM_WINDOWS
 	#include <Windows.h>
+#endif
 #endif

@@ -1,4 +1,5 @@
 #pragma once
+#include "Can/Core.h"
 
 namespace Can
 {

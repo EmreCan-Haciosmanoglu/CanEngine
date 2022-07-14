@@ -1,4 +1,5 @@
 #pragma once
+#include "Can/Core.h"
 #include <string>
 #include <unordered_map>
 

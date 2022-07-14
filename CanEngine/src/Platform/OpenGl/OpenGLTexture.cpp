@@ -48,7 +48,7 @@ namespace Can
 			m_InternalFormat = GL_RGB8;
 			m_DataFormat = GL_RGB;
 		}
-		CAN_CORE_ASSERT(m_InternalFormat & m_DataFormat, "Format isn't supported!");
+		assert(m_InternalFormat & m_DataFormat);
 
 		glCreateTextures(GL_TEXTURE_2D, 1, &m_RendererID);
 		glTextureStorage2D(m_RendererID, 1, m_InternalFormat, m_Width, m_Height);

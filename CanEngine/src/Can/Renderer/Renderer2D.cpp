@@ -8,8 +8,8 @@
 #include "Can/Font/FontAtlas.h"
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "ft2build.h"
-#include FT_FREETYPE_H
+//#include <ft2build.h>
+//#include FT_FREETYPE_H
 
 #include "Can/Font/FontFlags.h"
 
@@ -127,7 +127,7 @@ namespace Can
 	void Renderer2D::EndScene()
 	{
 
-		uint32_t dataSize = (uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase;
+		uint32_t dataSize = (uint32_t)((uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase);
 		s_Data.QuadVertexBuffer->SetData((float*)s_Data.QuadVertexBufferBase, dataSize);
 
 		Flush();
@@ -138,7 +138,7 @@ namespace Can
 		s_Data.QuadVertexArray->Bind();
 
 		for (size_t i = 0; i < s_Data.TextureSlotIndex; i++)
-			s_Data.TextureSlots[i]->Bind(i);
+			s_Data.TextureSlots[i]->Bind((uint32_t)i);
 		RenderCommand::DrawIndexed(s_Data.QuadVertexArray, s_Data.QuadIndexCount);
 	}
 
@@ -437,7 +437,7 @@ namespace Can
 	}
 	void Renderer2D::DrawText(const std::string& text, const glm::vec3& position, const glm::vec4& color, float zoomLevel)
 	{
-		int flags = FontFlags::LeftAligned | FontFlags::WordWrap;
+		/*//int flags = FontFlags::LeftAligned | FontFlags::WordWrap;
 
 		float _sx = zoomLevel *(2.0f / 1600.0f);
 		float _sy = zoomLevel *(2.0f / 900.0f);
@@ -446,7 +446,7 @@ namespace Can
 		float x = position.x;
 		float y = position.y + (s_Data.font->face->size->metrics.height >> 6);
 
-		FT_GlyphSlot slot = s_Data.font->face->glyph;
+		//FT_GlyphSlot slot = s_Data.font->face->glyph;
 
 		// Calculate alignment (if applicable)
 		float textWidth = 0;
@@ -535,6 +535,6 @@ namespace Can
 
 			s_Data.QuadIndexCount += 6;
 		}
-
+*/
 	}
 }

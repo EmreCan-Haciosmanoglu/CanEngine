@@ -1,7 +1,7 @@
 #include "canpch.h"
 #include "FontAtlas.h"
 #include "Can/Renderer/Texture.h"
-#include <glad/glad.h>
+//#include <glad/glad.h>
 
 namespace Can
 {
@@ -11,8 +11,8 @@ namespace Can
 	{
 		FT_Set_Pixel_Sizes(face, 0, pixelSize);
 
-		int rowWidth = 0;
-		int colHeight = 0;
+		//int rowWidth = 0;
+		//int colHeight = 0;
 
 		for (int i = 32; i < MAX_UNICODE_CHAR_COUNT; i++)
 		{
@@ -33,8 +33,9 @@ namespace Can
 				continue;
 
 			size_t size = slot->bitmap.width * slot->bitmap.rows;
-			std::vector<GLubyte> Data(size * 4, 0);
-			for (size_t i = 0; i < size; i++)
+            //std::vector<GLubyte> Data(size * 4, 0);
+            std::vector<u8> Data(size * 4, 0);
+            for (size_t i = 0; i < size; i++)
 			{
 				unsigned char c = slot->bitmap.buffer[i];
 				size_t index = i * 4;

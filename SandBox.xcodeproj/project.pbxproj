@@ -12,26 +12,15 @@
 		BD87F90E287FF81F00F7F757 /* SandBox3D.h in Headers */ = {isa = PBXBuildFile; fileRef = BD87F900287FF81F00F7F757 /* SandBox3D.h */; };
 		BD87F90F287FF81F00F7F757 /* SandBox3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD87F901287FF81F00F7F757 /* SandBox3D.cpp */; };
 		BD87F910287FF81F00F7F757 /* SandBox2DLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = BD87F902287FF81F00F7F757 /* SandBox2DLayer.h */; };
-		BD87F911287FF81F00F7F757 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD87F903287FF81F00F7F757 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BD87F8E0287FF7E400F7F757 /* libSandBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSandBox.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD87F8F1287FF81F00F7F757 /* imgui.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = imgui.ini; sourceTree = "<group>"; };
-		BD87F8F2287FF81F00F7F757 /* SandBox.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SandBox.vcxproj; sourceTree = "<group>"; };
-		BD87F8F3287FF81F00F7F757 /* Sandbox.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sandbox.vcxproj.filters; sourceTree = "<group>"; };
-		BD87F8F6287FF81F00F7F757 /* Man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Man.png; sourceTree = "<group>"; };
-		BD87F8F7287FF81F00F7F757 /* Name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Name.png; sourceTree = "<group>"; };
-		BD87F8F9287FF81F00F7F757 /* Square.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Square.glsl; sourceTree = "<group>"; };
-		BD87F8FA287FF81F00F7F757 /* Cube.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cube.glsl; sourceTree = "<group>"; };
-		BD87F8FB287FF81F00F7F757 /* 2DTexture.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2DTexture.glsl; sourceTree = "<group>"; };
-		BD87F8FC287FF81F00F7F757 /* Texture.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Texture.glsl; sourceTree = "<group>"; };
 		BD87F8FE287FF81F00F7F757 /* SandBoxApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SandBoxApp.cpp; sourceTree = "<group>"; };
 		BD87F8FF287FF81F00F7F757 /* SandBox2DLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SandBox2DLayer.cpp; sourceTree = "<group>"; };
 		BD87F900287FF81F00F7F757 /* SandBox3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBox3D.h; sourceTree = "<group>"; };
 		BD87F901287FF81F00F7F757 /* SandBox3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SandBox3D.cpp; sourceTree = "<group>"; };
 		BD87F902287FF81F00F7F757 /* SandBox2DLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBox2DLayer.h; sourceTree = "<group>"; };
-		BD87F903287FF81F00F7F757 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,42 +53,9 @@
 		BD87F8E7287FF81F00F7F757 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
-				BD87F8F1287FF81F00F7F757 /* imgui.ini */,
-				BD87F8F2287FF81F00F7F757 /* SandBox.vcxproj */,
-				BD87F8F3287FF81F00F7F757 /* Sandbox.vcxproj.filters */,
-				BD87F8F4287FF81F00F7F757 /* assets */,
 				BD87F8FD287FF81F00F7F757 /* src */,
 			);
 			path = SandBox;
-			sourceTree = "<group>";
-		};
-		BD87F8F4287FF81F00F7F757 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				BD87F8F5287FF81F00F7F757 /* textures */,
-				BD87F8F8287FF81F00F7F757 /* shaders */,
-			);
-			path = assets;
-			sourceTree = "<group>";
-		};
-		BD87F8F5287FF81F00F7F757 /* textures */ = {
-			isa = PBXGroup;
-			children = (
-				BD87F8F6287FF81F00F7F757 /* Man.png */,
-				BD87F8F7287FF81F00F7F757 /* Name.png */,
-			);
-			path = textures;
-			sourceTree = "<group>";
-		};
-		BD87F8F8287FF81F00F7F757 /* shaders */ = {
-			isa = PBXGroup;
-			children = (
-				BD87F8F9287FF81F00F7F757 /* Square.glsl */,
-				BD87F8FA287FF81F00F7F757 /* Cube.glsl */,
-				BD87F8FB287FF81F00F7F757 /* 2DTexture.glsl */,
-				BD87F8FC287FF81F00F7F757 /* Texture.glsl */,
-			);
-			path = shaders;
 			sourceTree = "<group>";
 		};
 		BD87F8FD287FF81F00F7F757 /* src */ = {
@@ -110,7 +66,6 @@
 				BD87F900287FF81F00F7F757 /* SandBox3D.h */,
 				BD87F8FF287FF81F00F7F757 /* SandBox2DLayer.cpp */,
 				BD87F902287FF81F00F7F757 /* SandBox2DLayer.h */,
-				BD87F903287FF81F00F7F757 /* main.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -187,7 +142,6 @@
 				BD87F90C287FF81F00F7F757 /* SandBoxApp.cpp in Sources */,
 				BD87F90D287FF81F00F7F757 /* SandBox2DLayer.cpp in Sources */,
 				BD87F90F287FF81F00F7F757 /* SandBox3D.cpp in Sources */,
-				BD87F911287FF81F00F7F757 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +186,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -289,7 +243,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -309,6 +263,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9SZ6ZLYFC3;
 				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = NO;
 				HEADER_SEARCH_PATHS = (
 					CanEngine/vendors/entt/src,
 					CanEngine/vendors/glm,
@@ -328,6 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9SZ6ZLYFC3;
 				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = NO;
 				HEADER_SEARCH_PATHS = (
 					CanEngine/vendors/entt/src,
 					CanEngine/vendors/glm,

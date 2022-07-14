@@ -2,7 +2,7 @@
 #include "Renderer3D.h"
 #include "Can.h"
 
-#include <glad/glad.h>
+//#include <glad/glad.h>
 
 
 namespace Can
@@ -62,13 +62,12 @@ namespace Can
 			Prefab* prefab = obj->prefab;
 
 			prefab->shader->Bind();
-			glActiveTexture(GL_TEXTURE15);
-			glBindTexture(GL_TEXTURE_2D, shadowMapTexture);
+			//glActiveTexture(GL_TEXTURE15);
+			//glBindTexture(GL_TEXTURE_2D, shadowMapTexture);
 			prefab->shader->SetMat4("u_LightSpace", lightspace);
 			prefab->shader->SetMat4("u_Transform", obj->transform);
 			prefab->shader->SetFloat4("u_TintColor", obj->tintColor);
 
-			glm::vec3 rotatedLightRay = glm::rotate(lightPos, -(obj->rotation.y), glm::vec3{ 0.0f, 1.0f , 0.0f });
 			prefab->shader->SetFloat3("u_LightPos", lightPos);
 			prefab->shader->SetFloat3("u_ViewPos", camera.position);
 			prefab->vertexArray->Bind();

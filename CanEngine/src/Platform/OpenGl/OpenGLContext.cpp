@@ -2,8 +2,8 @@
 
 #include "OpenGLContext.h"
 
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 namespace Can
 {
@@ -16,10 +16,10 @@ namespace Can
 	{
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		CAN_CORE_ASSERT(status, "Failed to initialize Glad!");
+		assert(status);
 
-		CAN_CORE_INFO(
-			"OpenGL Info---\n      Vendor: {0}\n      Renderer: {1}\n      Version: {2}\n      Shading Version: {3}",
+		printf(
+			"OpenGL Info---\n      Vendor: %s\n      Renderer: %s\n      Version: %s\n      Shading Version: %s",
 			glGetString(GL_VENDOR),
 			glGetString(GL_RENDERER),
 			glGetString(GL_VERSION),

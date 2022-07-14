@@ -13,7 +13,7 @@ namespace Can
 			case RendererAPI::API::None: assert(false); return nullptr;
 			case RendererAPI::API::OpenGL: return CreateRef<OpenGLFramebuffer>(spec);
 		}
-		CAN_CORE_ASSERT(false, "Unknown RendererAPI!!!");
+		assert(false);
 		return nullptr;
 	}
 }

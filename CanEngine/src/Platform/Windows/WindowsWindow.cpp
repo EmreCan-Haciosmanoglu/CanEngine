@@ -45,7 +45,7 @@ void WindowsWindow::Init(const WindowProps& props)
     m_Data.Width = props.Width;
     m_Data.Height = props.Height;
     
-    printf("Creating window %s (%d, %d)\n", props.Title, props.Width, props.Height);
+    printf("Creating window %s (%d, %d)\n", props.Title.c_str(), props.Width, props.Height);
     
     
     if (s_GLFWWindowCount == 0)

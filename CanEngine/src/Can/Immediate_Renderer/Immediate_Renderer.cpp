@@ -174,7 +174,11 @@ namespace Can
 	}
 	void immediate_quad(v2i& p0i, v2i& p1i, v2i& p2i, v2i& p3i, v2& uv0, v2& uv1, v2& uv2, v2& uv3, v4& color, f32 texture_index)
 	{
-		immediate_quad(v3i(p0i, 0), v3i(p1i, 0), v3i(p2i, 0), v3i(p3i, 0), uv0, uv1, uv2, uv3, color, texture_index);
+        v3i p03i(p0i,0);
+        v3i p13i(p1i,0);
+        v3i p23i(p2i,0);
+        v3i p33i(p3i,0);
+		immediate_quad(p03i, p13i, p23i, p33i, uv0, uv1, uv2, uv3, color, texture_index);
 	}
 	void immediate_quad(v3i& p0i, v3i& p1i, v3i& p2i, v3i& p3i, v2& uv0, v2& uv1, v2& uv2, v2& uv3, v4& color, f32 texture_index)
 	{
@@ -213,7 +217,11 @@ namespace Can
 	}
 	void immediate_quad(v2& p0, v2& p1, v2& p2, v2& p3, v2& uv0, v2& uv1, v2& uv2, v2& uv3, v4& color, f32 texture_index)
 	{
-		immediate_quad(v3(p0, 0.0f), v3(p1, 0.0f), v3(p2, 0.0f), v3(p3, 0.0f), uv0, uv1, uv2, uv3, color, texture_index);
+        v3 p03(p0,0);
+        v3 p13(p1,0);
+        v3 p23(p2,0);
+        v3 p33(p3,0);
+		immediate_quad(p03, p13, p23, p33, uv0, uv1, uv2, uv3, color, texture_index);
 	}
 	void immediate_quad(v3& p0, v3& p1, v3& p2, v3& p3, v2& uv0, v2& uv1, v2& uv2, v2& uv3, v4& color, f32 texture_index)
 	{
@@ -247,7 +255,11 @@ namespace Can
 	}
 	void immediate_quad(v2& p0, v2& p1, v2& p2, v2& p3, v4& color)
 	{
-		immediate_quad(v3(p0, 0.0f), v3(p1, 0.0f), v3(p2, 0.0f), v3(p3, 0.0f), color);
+        v3 p03(p0,0);
+        v3 p13(p1,0);
+        v3 p23(p2,0);
+        v3 p33(p3,0);
+        immediate_quad(p03, p13, p23, p33, color);
 	}
 	void immediate_quad(v3& p0, v3& p1, v3& p2, v3& p3, v4& color)
 	{
@@ -281,7 +293,11 @@ namespace Can
 	}
 	void immediate_quad(v2i& p0i, v2i& p1i, v2i& p2i, v2i& p3i, v4& color)
 	{
-		immediate_quad(v3i(p0i, 0), v3i(p1i, 0), v3i(p2i, 0), v3i(p3i, 0), color);
+        v3i p03i(p0i,0);
+        v3i p13i(p1i,0);
+        v3i p23i(p2i,0);
+        v3i p33i(p3i,0);
+        immediate_quad(p03i, p13i, p23i, p33i, color);
 	}
 	void immediate_quad(v3i& p0i, v3i& p1i, v3i& p2i, v3i& p3i, v4& color)
 	{
@@ -352,6 +368,7 @@ namespace Can
 	}
 	void immediate_text(const std::string& text, Rect& rect, Label_Theme& theme, bool relative)
 	{
+        /*
 		Font* font = theme.font;
 		u16 font_size_in_pixel = theme.font_size_in_pixel;
 		if (!font)
@@ -462,6 +479,7 @@ namespace Can
 			immediate_quad(p0i, p1i, p2i, p3i, uv0, uv1, uv2, uv3, theme.color, texture_index);
 			//immediate_quad(p0i, p1i, p2i, p3i, uv0, uv1, uv2, uv3, color, 0.0f);
 		}
+         */
 	}
 
 	bool global_pressed = false;
@@ -551,7 +569,7 @@ namespace Can
 					else
 					{
 						if (state->flags & BUTTON_STATE_FLAGS_PRESSED || state->flags & BUTTON_STATE_FLAGS_HOLD)
-							color == theme.background_color_pressed;
+							color = theme.background_color_pressed;
 					}
 				}
 			}
@@ -604,7 +622,7 @@ namespace Can
 		*/
 		state->flags &= (0xffff ^ DROP_DOWN_LIST_STATE_FLAGS_ITEM_CHANGED);
 
-		bool mouse_pressed = Input::IsMouseButtonPressed(MouseCode::Button0);
+		//bool mouse_pressed = Input::IsMouseButtonPressed(MouseCode::Button0);
 		auto window_heigth = main_application->GetWindow().GetHeight();
 		auto [mouse_x, mouse_y] = Input::get_mouse_pos();
 		mouse_y = window_heigth - mouse_y;
@@ -785,7 +803,7 @@ namespace Can
 					else
 					{
 						if (state->flags & BUTTON_STATE_FLAGS_PRESSED || state->flags & BUTTON_STATE_FLAGS_HOLD)
-							color == thumb_theme.background_color_pressed;
+							color = thumb_theme.background_color_pressed;
 					}
 				}
 			}
@@ -987,7 +1005,7 @@ namespace Can
 					else
 					{
 						if (state->flags & BUTTON_STATE_FLAGS_PRESSED || state->flags & BUTTON_STATE_FLAGS_HOLD)
-							color == thumb_theme.background_color_pressed;
+							color = thumb_theme.background_color_pressed;
 					}
 				}
 			}
@@ -1281,7 +1299,7 @@ namespace Can
 					else
 					{
 						if (state->flags & CHECK_BOX_STATE_FLAGS_PRESSED || state->flags & CHECK_BOX_STATE_FLAGS_HOLD)
-							color == theme.background_color_pressed;
+							color = theme.background_color_pressed;
 					}
 				}
 			}
@@ -1436,12 +1454,12 @@ namespace Can
 
 	void immediate_flush()
 	{
-		buffer_data.vertex_buffer->SetData((f32*)buffer_data.buffer_base, buffer_data.buffer_cursor * sizeof(Vertex));
+		buffer_data.vertex_buffer->SetData((f32*)buffer_data.buffer_base, (uint32_t)(buffer_data.buffer_cursor * sizeof(Vertex)));
 		buffer_data.vertex_array->Bind();
 
 		for (size_t i = 0; i < buffer_data.texture_slots_cursor; i++)
-			buffer_data.texture_slots[i]->Bind(i);
-		RenderCommand::DrawIndexed(buffer_data.vertex_array, buffer_data.quad_count);
+			buffer_data.texture_slots[i]->Bind((uint32_t)i);
+		RenderCommand::DrawIndexed(buffer_data.vertex_array, (uint32_t)(buffer_data.quad_count));
 
 		buffer_data.texture_slots_cursor = 1;
 		buffer_data.quad_count = 0;

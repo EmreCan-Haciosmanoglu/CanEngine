@@ -21,11 +21,11 @@ namespace Can
 		{
 			s_RendererAPI->Clear();
 		}
-		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray)
+		inline static void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray)
 		{
 			s_RendererAPI->DrawIndexed(vertexArray);
 		}
-		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray, uint32_t indexCount)
+		inline static void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray, uint32_t indexCount)
 		{
 			s_RendererAPI->DrawIndexed(vertexArray, indexCount);
 		}
@@ -34,6 +34,6 @@ namespace Can
 			s_RendererAPI->enable_depth_testing(enable);
 		}
 	private:
-		static Scope<RendererAPI> s_RendererAPI;
+		static std::unique_ptr<RendererAPI> s_RendererAPI;
 	};
  }

@@ -83,7 +83,6 @@ namespace Can
 
 	void Perspective_Camera_Controller::translate(v3 direction, f32 length)
 	{
-		f32 angle_in_radians = glm::radians(camera.rotation.z);
 		v3 sized = direction * length;
 		camera.position += sized;
 

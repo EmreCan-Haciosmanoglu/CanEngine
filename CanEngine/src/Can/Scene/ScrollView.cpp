@@ -72,7 +72,7 @@ namespace Can
 		{
 			std::vector<entt::entity>& children = sceneRegistry.get<ChildrenComponent>(entityID);
 			float totalChildrenWidth = 0.0f;
-			float totalChildrenHeight = 0.0f; // If vertical
+			//float totalChildrenHeight = 0.0f; // If vertical
 			float spaceBetween = 0.2f; // needs to be member of this scrollview
 			totalChildrenWidth += spaceBetween;
 			for (entt::entity child : children)
@@ -95,7 +95,7 @@ namespace Can
 				}
 				// Set scrollbar size
 				entt::entity bar = sceneRegistry.get<ChildrenComponent>(scrollbarID)[0];
-				auto& [bt, bsr] = sceneRegistry.get<TransformComponent, SpriteRendererComponent>(bar);
+				auto [bt, bsr] = sceneRegistry.get<TransformComponent, SpriteRendererComponent>(bar);
 				scrollbar->sizeRatio = totalChildrenWidth / vsr.size.x;
 				bsr.size.x = vsr.size.x / scrollbar->sizeRatio;
 				// Then get the scroll bar pos and calculate children positions
@@ -144,7 +144,6 @@ namespace Can
 					if (sceneRegistry.has< IgnoreScrollingComponent>(child))
 						continue;
 					SpriteRendererComponent& sr = sceneRegistry.get<SpriteRendererComponent>(child);
-					TransformComponent& transform = sceneRegistry.get<TransformComponent>(child);
 
 					cursor.x -= sr.size.x; //horizontal
 					cursor.x -= spaceBetween;

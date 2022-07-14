@@ -10,3 +10,6 @@
 [submodule "ImGui"]
 	path = ImGui
 	url = https://github.com/EmreCan-Haciosmanoglu/imgui
+[submodule "Stb"]
+	path = Stb
+	url = https://github.com/EmreCan-Haciosmanoglu/stb
