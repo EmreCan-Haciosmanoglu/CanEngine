@@ -79,6 +79,7 @@
 		BD87FE96288080F800F7F757 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD87F8D1287F48DF00F7F757 /* Metal.framework */; };
 		BD87FE97288080F800F7F757 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD87F8D2287F48E000F7F757 /* MetalKit.framework */; };
 		BD87FE982880810200F7F757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD87F8D5287F48EC00F7F757 /* Foundation.framework */; };
+		BDA88E872881794900BFB8CF /* MacOSWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDA88E862881794900BFB8CF /* MacOSWindow.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -246,6 +247,8 @@
 		BD87FCC22880545400F7F757 /* stb_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
 		BD87FE8D288068AD00F7F757 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3.7/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		BD87FE8F288068EA00F7F757 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfreetype.6.dylib; sourceTree = "<group>"; };
+		BDA88E862881794900BFB8CF /* MacOSWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MacOSWindow.cpp; sourceTree = "<group>"; };
+		BDA88E89288179DA00BFB8CF /* MacOSWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacOSWindow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -538,6 +541,8 @@
 			children = (
 				BD8708852880B94C00F7F757 /* MacOSInput.cpp */,
 				BD8708862880B94C00F7F757 /* MacOSInput.h */,
+				BDA88E862881794900BFB8CF /* MacOSWindow.cpp */,
+				BDA88E89288179DA00BFB8CF /* MacOSWindow.h */,
 			);
 			path = MacOS;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 				BD87088228808C6100F7F757 /* OpenGLVertexArray.cpp in Sources */,
 				BD87086F28808C6000F7F757 /* HiddenComponent.cpp in Sources */,
 				BD87084028808C5E00F7F757 /* VertexArray.cpp in Sources */,
+				BDA88E872881794900BFB8CF /* MacOSWindow.cpp in Sources */,
 				BD87084228808C5E00F7F757 /* RenderCommand.cpp in Sources */,
 				BD87085928808C5F00F7F757 /* ShadowBox.cpp in Sources */,
 				BD87086228808C5F00F7F757 /* Application.cpp in Sources */,

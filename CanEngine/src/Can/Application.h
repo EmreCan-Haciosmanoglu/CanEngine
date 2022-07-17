@@ -15,9 +15,6 @@
 #include "Can/Renderer/Shader.h"
 #include "Can/Renderer/VertexArray.h"
 
-#ifdef CAN_LATFORM_MACOS
-#include "Platform/MacOS/AppDelegate.h"
-#endif
 
 namespace NS
 {

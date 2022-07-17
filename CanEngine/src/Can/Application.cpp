@@ -229,7 +229,7 @@ Application::Application(const WindowProps& props)
     s_Instance = this;
     
     Utility::Random rand;
-#ifdef CAN_PLATFORM_MACOS
+#ifndef CAN_PLATFORM_MACOS
     pAutoreleasePool = NS::AutoreleasePool::alloc()->init();
     pSharedApplication = NS::Application::sharedApplication();
     MyAppDelegate del;
@@ -238,8 +238,9 @@ Application::Application(const WindowProps& props)
     
 
 #endif
-    /*
     m_Window = Window::Create(props);
+    
+    /*
     m_Window->SetEventCallback(CAN_BIND_EVENT_FN(Application::OnEvent));
     
     Renderer::Init();
